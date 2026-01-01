@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const cairo = Cairo({ subsets: ["arabic"] });
+const cairo = Cairo({ subsets: ["arabic", "latin"] });
 
 export const metadata: Metadata = {
   title: "سيوة الطبيعي",
@@ -18,9 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
-      <body className={cairo.className}>
+      <body className={`${cairo.className} bg-sand-light`}>
         <Header />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
