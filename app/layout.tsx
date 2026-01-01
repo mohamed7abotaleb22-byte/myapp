@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/Header";
+import "@/styles/globals.css";  // أو "../styles/globals.css" إذا كنت تفضلimport Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const cairo = Cairo({ subsets: ["arabic", "latin"] });
@@ -26,3 +25,4 @@ export default function RootLayout({
     </html>
   );
 }
+
