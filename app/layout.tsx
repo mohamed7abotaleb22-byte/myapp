@@ -1,8 +1,28 @@
-import './globals.css';  // هذا السطر موجود أصلاً، تأكد منه
+import type { Metadata } from "next";
+import { Cairo } from "next/font/google";
+import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
-// أضف هذا إذا لم يكن كافياً (import من React أو Next)
-import type { Metadata } from 'next';
+const cairo = Cairo({ subsets: ["arabic"] });
 
-// أو أي import آخر، مثل:
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+export const metadata: Metadata = {
+  title: "سيوة الطبيعي",
+  description: "منتجات أصيلة من واحة سيوة",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="ar" dir="rtl">
+      <body className={cairo.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
+    </html>
+  );
+}
